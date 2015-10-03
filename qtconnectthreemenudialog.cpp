@@ -35,9 +35,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "qtconnectthreeresources.h"
 #include "qtconnectthreewidget.h"
 #include "qtselectplayerwidget.h"
-#include "qtconnectthreecanvas.h"
-#include "qtcanvasdialog.h"
-#include "qtcanvas.h"
+//#include "qtconnectthreecanvas.h"
+//#include "qtcanvasdialog.h"
+//#include "qtcanvas.h"
 #include "testtimer.h"
 #include "ui_qtconnectthreemenudialog.h"
 #include "trace.h"
@@ -102,8 +102,8 @@ void ribi::con3::QtConnectThreeMenuDialog::Test() noexcept
   const boost::shared_ptr<const ConnectThreeResources> resources(new QtConnectThreeResources);
   QtConnectThreeGameDialog d(resources,nullptr,std::bitset<3>(false));
   {
+    /*
     const std::bitset<3> is_player_human(false);
-
     QtCanvas * const qtcanvas {
       new QtConnectThreeCanvas(is_player_human,16,8)
     };
@@ -111,11 +111,13 @@ void ribi::con3::QtConnectThreeMenuDialog::Test() noexcept
       new QtCanvasDialog(qtcanvas)
     };
     assert(d);
+    */
   }
   const TestTimer test_timer(__func__,__FILE__,1.0);
 }
 #endif
 
+/*
 void ribi::con3::QtConnectThreeMenuDialog::on_button_start_retro_clicked() noexcept
 {
   const std::bitset<3>& is_player_human = std::bitset<3>(true);
@@ -136,3 +138,4 @@ void ribi::con3::QtConnectThreeMenuDialog::on_button_start_retro_clicked() noexc
   d->setWindowTitle("ConnectThree");
   ShowChild(d.get());
 }
+*/

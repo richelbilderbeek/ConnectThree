@@ -140,6 +140,7 @@ void ribi::con3::QtConnectThreeGameDialog::OnValidMove() noexcept
         case Winner::player2  : filename = m_resources->GetPlayersFilenames()[1]; break;
         case Winner::player3  : filename = m_resources->GetPlayersFilenames()[2]; break;
         case Winner::no_winner: filename = m_resources->GetEmptyFilename(); break;
+        case Winner::draw     : filename = m_resources->GetEmptyFilename(); break;
         default:
           assert(!"Should not get here");
           throw std::logic_error("Known value of GetCurrentPlayer in WtConnectThreeGameDialog::OnValidMove");

@@ -1,27 +1,22 @@
-include(../../Games/GameConnectThree/GameConnectThreeConsole.pri)
+include(../ConnectThree/GameConnectThreeConsole.pri)
 
 SOURCES += \
-    ../../Games/GameConnectThree/qtshowwinnerdialog.cpp \
-    ../../Games/GameConnectThree/qtselectplayerwidget.cpp \
-    ../../Games/GameConnectThree/qtconnectthreeresources.cpp \
-    ../../Games/GameConnectThree/qtconnectthreemenudialog.cpp \
-    ../../Games/GameConnectThree/qtconnectthreegamedialog.cpp \
-    ../../Games/GameConnectThree/qtconnectthreecanvas.cpp
+    ../ConnectThree/qtshowwinnerdialog.cpp \
+    ../ConnectThree/qtselectplayerwidget.cpp \
+    ../ConnectThree/qtconnectthreeresources.cpp \
+    ../ConnectThree/qtconnectthreemenudialog.cpp \
+    ../ConnectThree/qtconnectthreegamedialog.cpp
+#    ../ConnectThree/qtconnectthreecanvas.cpp
 
 HEADERS  += \
-    ../../Games/GameConnectThree/qtshowwinnerdialog.h \
-    ../../Games/GameConnectThree/qtselectplayerwidget.h \
-    ../../Games/GameConnectThree/qtconnectthreeresources.h \
-    ../../Games/GameConnectThree/qtconnectthreemenudialog.h \
-    ../../Games/GameConnectThree/qtconnectthreegamedialog.h \
-    ../../Games/GameConnectThree/qtconnectthreecanvas.h
+    ../ConnectThree/qtshowwinnerdialog.h \
+    ../ConnectThree/qtselectplayerwidget.h \
+    ../ConnectThree/qtconnectthreeresources.h \
+    ../ConnectThree/qtconnectthreemenudialog.h \
+    ../ConnectThree/qtconnectthreegamedialog.h
+#    ../ConnectThree/qtconnectthreecanvas.h
 
 FORMS += \
-    ../../Games/GameConnectThree/qtshowwinnerdialog.ui \
-    ../../Games/GameConnectThree/qtconnectthreemenudialog.ui \
-    ../../Games/GameConnectThree/qtconnectthreegamedialog.ui
-
-# Moved to GameConnectThreeConsole.pri
-# RESOURCES += \
-#     ../../Games/GameConnectThree/GameConnectThree.qrc
-
+    ../ConnectThree/qtshowwinnerdialog.ui \
+    ../ConnectThree/qtconnectthreemenudialog.ui \
+    ../ConnectThree/qtconnectthreegamedialog.ui

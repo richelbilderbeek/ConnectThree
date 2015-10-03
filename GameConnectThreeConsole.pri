@@ -1,16 +1,16 @@
 INCLUDEPATH += \
-    ../../Games/GameConnectThree
+    ../ConnectThree
 
 SOURCES += \
-    ../../Games/GameConnectThree/connectthreemenudialog.cpp \
-    ../../Games/GameConnectThree/connectthreeresources.cpp
+    ../ConnectThree/connectthreemenudialog.cpp \
+    ../ConnectThree/connectthreeresources.cpp
 
 HEADERS  += \
-    ../../Games/GameConnectThree/connectthreemenudialog.h \
-    ../../Games/GameConnectThree/connectthreeresources.h
+    ../ConnectThree/connectthreemenudialog.h \
+    ../ConnectThree/connectthreeresources.h
 
 OTHER_FILES += \
-    ../../Games/GameConnectThree/Licence.txt
+    ../ConnectThree/Licence.txt
 
 RESOURCES += \
-    ../../Games/GameConnectThree/GameConnectThree.qrc
+    ../ConnectThree/GameConnectThree.qrc
