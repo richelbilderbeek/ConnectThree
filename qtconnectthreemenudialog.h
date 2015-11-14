@@ -23,12 +23,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <string>
 #include <vector>
-
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
-#include <boost/shared_ptr.hpp>
+#include "connectthreeresources.h"
 #include "qthideandshowdialog.h"
-#pragma GCC diagnostic pop
 
 namespace Ui {
   class QtConnectThreeMenuDialog;
@@ -37,31 +33,32 @@ namespace Ui {
 namespace ribi {
 namespace con3 {
 
-struct ConnectThreeResources;
 struct QtSelectPlayerWidget;
 
-class QtConnectThreeMenuDialog : public QtHideAndShowDialog
+class QtMenuDialog : public QtHideAndShowDialog
 {
   Q_OBJECT
 
 public:
   ///Throws an exception if the resources cannot be found
-  explicit QtConnectThreeMenuDialog(QWidget *parent = 0);
-  QtConnectThreeMenuDialog(const QtConnectThreeMenuDialog&) = delete;
-  QtConnectThreeMenuDialog& operator=(const QtConnectThreeMenuDialog&) = delete;
-  ~QtConnectThreeMenuDialog() noexcept;
+  explicit QtMenuDialog(
+    const ConnectThreeResources& resources,
+    QWidget *parent = 0
+  );
+  QtMenuDialog(const QtMenuDialog&) = delete;
+  QtMenuDialog& operator=(const QtMenuDialog&) = delete;
+  ~QtMenuDialog() noexcept;
 
 private:
   Ui::QtConnectThreeMenuDialog *ui;
-  const boost::shared_ptr<const ConnectThreeResources> m_resources;
-  boost::shared_ptr<QtSelectPlayerWidget> m_select;
+  const ConnectThreeResources& m_resources;
+  QtSelectPlayerWidget * m_select; //Management handled by QDialog
 
 private slots:
 
   void on_button_start_clicked() noexcept;
   void on_button_about_clicked() noexcept;
   void on_button_quit_clicked() noexcept;
-  //void on_button_start_retro_clicked() noexcept;
 
   #ifndef NDEBUG
   static void Test() noexcept;

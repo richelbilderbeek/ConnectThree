@@ -26,11 +26,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 namespace ribi {
 namespace con3 {
 
-struct ConnectThreeMenuDialog final : public ::ribi::MenuDialog
+struct MenuDialog final : public ::ribi::MenuDialog
 {
   About GetAbout() const noexcept override;
   Help GetHelp() const noexcept override;
-  boost::shared_ptr<const Program> GetProgram() const noexcept override;
   std::string GetVersion() const noexcept override;
   std::vector<std::string> GetVersionHistory() const noexcept override;
 

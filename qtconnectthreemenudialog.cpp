@@ -32,22 +32,21 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "connectthreemenudialog.h"
 #include "qtaboutdialog.h"
 #include "qtconnectthreegamedialog.h"
-#include "qtconnectthreeresources.h"
 #include "qtconnectthreewidget.h"
 #include "qtselectplayerwidget.h"
-//#include "qtconnectthreecanvas.h"
-//#include "qtcanvasdialog.h"
-//#include "qtcanvas.h"
 #include "testtimer.h"
 #include "ui_qtconnectthreemenudialog.h"
 #include "trace.h"
 #pragma GCC diagnostic pop
 
-ribi::con3::QtConnectThreeMenuDialog::QtConnectThreeMenuDialog(QWidget *parent)
+ribi::con3::QtMenuDialog::QtMenuDialog(
+  const ConnectThreeResources& resources,
+  QWidget *parent
+)
   : QtHideAndShowDialog(parent),
     ui(new Ui::QtConnectThreeMenuDialog),
-    m_resources(new QtConnectThreeResources),
-    m_select(new QtSelectPlayerWidget)
+    m_resources{resources},
+    m_select{new QtSelectPlayerWidget}
 {
   #ifndef NDEBUG
   Test();
@@ -56,26 +55,27 @@ ribi::con3::QtConnectThreeMenuDialog::QtConnectThreeMenuDialog(QWidget *parent)
   ui->setupUi(this);
   assert(layout());
 
-  layout()->addWidget(m_select.get());
+  layout()->addWidget(m_select);
 }
 
-ribi::con3::QtConnectThreeMenuDialog::~QtConnectThreeMenuDialog() noexcept
+ribi::con3::QtMenuDialog::~QtMenuDialog() noexcept
 {
   delete ui;
+  m_resources.RemoveFiles();
 }
 
 
-void ribi::con3::QtConnectThreeMenuDialog::on_button_start_clicked() noexcept
+void ribi::con3::QtMenuDialog::on_button_start_clicked() noexcept
 {
-  QtConnectThreeGameDialog d(m_resources, nullptr,this->m_select->GetIsPlayerHuman());
+  QtGameDialog d(m_resources,this->m_select->GetIsPlayerHuman());
   d.setStyleSheet(this->styleSheet());
   d.setWindowIcon(this->windowIcon());
   this->ShowChild(&d);
 }
 
-void ribi::con3::QtConnectThreeMenuDialog::on_button_about_clicked() noexcept
+void ribi::con3::QtMenuDialog::on_button_about_clicked() noexcept
 {
-  About about = ConnectThreeMenuDialog().GetAbout();
+  About about = MenuDialog().GetAbout();
   about.AddLibrary("QtConnectThreeWidget version: " + QtConnectThreeWidget::GetVersion());
   QtAboutDialog d(about);
   d.setStyleSheet(this->styleSheet());
@@ -83,13 +83,13 @@ void ribi::con3::QtConnectThreeMenuDialog::on_button_about_clicked() noexcept
   this->ShowChild(&d);
 }
 
-void ribi::con3::QtConnectThreeMenuDialog::on_button_quit_clicked() noexcept
+void ribi::con3::QtMenuDialog::on_button_quit_clicked() noexcept
 {
   close();
 }
 
 #ifndef NDEBUG
-void ribi::con3::QtConnectThreeMenuDialog::Test() noexcept
+void ribi::con3::QtMenuDialog::Test() noexcept
 {
   {
     static bool is_tested{false};
@@ -97,45 +97,10 @@ void ribi::con3::QtConnectThreeMenuDialog::Test() noexcept
     is_tested = true;
   }
   {
-    ConnectThreeMenuDialog();
+    MenuDialog();
   }
-  const boost::shared_ptr<const ConnectThreeResources> resources(new QtConnectThreeResources);
-  QtConnectThreeGameDialog d(resources,nullptr,std::bitset<3>(false));
-  {
-    /*
-    const std::bitset<3> is_player_human(false);
-    QtCanvas * const qtcanvas {
-      new QtConnectThreeCanvas(is_player_human,16,8)
-    };
-    boost::scoped_ptr<QtCanvasDialog> d {
-      new QtCanvasDialog(qtcanvas)
-    };
-    assert(d);
-    */
-  }
+  const ConnectThreeResources resources;
+  QtGameDialog d(resources,std::bitset<3>(false));
   const TestTimer test_timer(__func__,__FILE__,1.0);
 }
 #endif
-
-/*
-void ribi::con3::QtConnectThreeMenuDialog::on_button_start_retro_clicked() noexcept
-{
-  const std::bitset<3>& is_player_human = std::bitset<3>(true);
-
-  QtCanvas * const qtcanvas {
-    new QtConnectThreeCanvas(is_player_human,16,8)
-  };
-  boost::scoped_ptr<QtCanvasDialog> d {
-    new QtCanvasDialog(qtcanvas)
-  };
-  {
-    //Put the dialog in the screen center
-    const QRect screen = QApplication::desktop()->screenGeometry();
-    d->setGeometry(
-      0,0,256,256);
-    d->move( screen.center() - this->rect().center() );
-  }
-  d->setWindowTitle("ConnectThree");
-  ShowChild(d.get());
-}
-*/

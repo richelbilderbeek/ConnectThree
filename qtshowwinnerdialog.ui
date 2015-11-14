@@ -50,7 +50,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="GameConnectThree.qrc">:/images/ConnectThreePlayer1.png</pixmap>
+      <pixmap resource="ConnectThree.qrc">:/images/ConnectThreePlayer1.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -76,7 +76,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="GameConnectThree.qrc"/>
+  <include location="ConnectThree.qrc"/>
  </resources>
  <connections/>
 </ui>

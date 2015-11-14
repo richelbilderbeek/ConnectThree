@@ -13,4 +13,4 @@ OTHER_FILES += \
     ../ConnectThree/Licence.txt
 
 RESOURCES += \
-    ../ConnectThree/GameConnectThree.qrc
+    ../ConnectThree/ConnectThree.qrc

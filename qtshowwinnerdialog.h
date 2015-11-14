@@ -45,7 +45,8 @@ public:
   explicit QtShowWinnerDialog(
     const std::string& filename,
     const std::string& winner_text,
-    QWidget *parent = 0) noexcept;
+    QWidget *parent = 0
+  ) noexcept;
   QtShowWinnerDialog(const QtShowWinnerDialog&) = delete;
   QtShowWinnerDialog& operator=(const QtShowWinnerDialog&) = delete;
   ~QtShowWinnerDialog() noexcept;

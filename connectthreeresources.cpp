@@ -33,6 +33,39 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma GCC diagnostic pop
 
+ribi::con3::ConnectThreeResources::ConnectThreeResources()
+  : ConnectThreeResources(
+    {
+      "ConnectThreeComputer1.png",
+      "ConnectThreeComputer2.png",
+      "ConnectThreeComputer3.png"
+    },
+    "ConnectThreeComputerGrey.png",
+    "ConnectThree.css",
+    "ConnectThreeEmpty.png",
+    "ConnectThreeIcon.png",
+    {
+      "ConnectThreeGood1.png",
+      "ConnectThreeGood2.png"
+    },
+    "ConnectThreeWrong.png",
+    {
+      "ConnectThreePlayer1.png",
+      "ConnectThreePlayer2.png",
+      "ConnectThreePlayer3.png"
+    },
+    {
+      "ConnectThreePlayer1Grey.png",
+      "ConnectThreePlayer2Grey.png",
+      "ConnectThreePlayer3Grey.png"
+    },
+    "Quit",
+    "Winner"
+  )
+{
+  Create();
+}
+
 ribi::con3::ConnectThreeResources::ConnectThreeResources(
   const std::vector<std::string>& computers_filenames,
   const std::string& computer_grey_filename,
@@ -59,11 +92,6 @@ ribi::con3::ConnectThreeResources::ConnectThreeResources(
     m_winner_text(winner_text)
 {
   Create();
-}
-
-ribi::con3::ConnectThreeResources::~ConnectThreeResources() noexcept
-{
-  RemoveFiles();
 }
 
 void ribi::con3::ConnectThreeResources::Create() const

@@ -41,18 +41,19 @@ namespace con3 {
 struct QtConnectThreeWidget;
 struct ConnectThreeResources;
 
-class QtConnectThreeGameDialog : public QtHideAndShowDialog
+class QtGameDialog : public QtHideAndShowDialog
 {
   Q_OBJECT
 
 public:
-  explicit QtConnectThreeGameDialog(
-    const boost::shared_ptr<const ConnectThreeResources> resources,
-    QWidget *parent = 0,
-    const std::bitset<3>& is_player_human = std::bitset<3>(true)) noexcept;
-  QtConnectThreeGameDialog(const QtConnectThreeGameDialog&) = delete;
-  QtConnectThreeGameDialog& operator=(const QtConnectThreeGameDialog&) = delete;
-  ~QtConnectThreeGameDialog() noexcept;
+  explicit QtGameDialog(
+    const ConnectThreeResources& resources,
+    const std::bitset<3>& is_player_human = std::bitset<3>(true),
+    QWidget *parent = nullptr
+  ) noexcept;
+  QtGameDialog(const QtGameDialog&) = delete;
+  QtGameDialog& operator=(const QtGameDialog&) = delete;
+  ~QtGameDialog() noexcept;
 
   boost::signals2::signal<void ()> m_signal_close;
 
@@ -65,7 +66,7 @@ private:
   const std::bitset<3>& m_is_player_human;
 
   ///The filenames
-  const boost::shared_ptr<const ConnectThreeResources> m_resources;
+  const ConnectThreeResources& m_resources;
 
   ///OnValidMove is called after a valid move. The game
   ///is either terminated, or the next player can do

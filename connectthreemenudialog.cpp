@@ -23,8 +23,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "connectthreemenudialog.h"
 
 
-#include "connectthree.h"
+#include "connectthreegame.h"
 #include "connectthreewidget.h"
+#include "connectthreemove.h"
 #include "richelbilderbeekprogram.h"
 
 #include <cassert>
@@ -34,7 +35,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "trace.h"
 #pragma GCC diagnostic pop
 
-int ribi::con3::ConnectThreeMenuDialog::ExecuteSpecific(const std::vector<std::string>& argv) noexcept
+int ribi::con3::MenuDialog::ExecuteSpecific(const std::vector<std::string>& argv) noexcept
 {
   #ifndef NDEBUG
   Test();
@@ -46,8 +47,8 @@ int ribi::con3::ConnectThreeMenuDialog::ExecuteSpecific(const std::vector<std::s
     return 1;
   }
 
-  boost::shared_ptr<ConnectThree> c {
-    new ConnectThree(15,5)
+  boost::shared_ptr<Game> c {
+    new Game(15,5)
   };
   const std::bitset<3> is_player_human(0);
   while (c->GetWinner() == Winner::no_winner)
@@ -74,25 +75,25 @@ int ribi::con3::ConnectThreeMenuDialog::ExecuteSpecific(const std::vector<std::s
   return 0;
 }
 
-ribi::About ribi::con3::ConnectThreeMenuDialog::GetAbout() const noexcept
+ribi::About ribi::con3::MenuDialog::GetAbout() const noexcept
 {
   About a(
     "Richel Bilderbeek",
     "ConnectThree",
     "connect-three game",
-    "the 23rd of January 2014",
+    "the 14th of November 2015",
     "2010-2015",
     "http://www.richelbilderbeek.nl/GameConnectThree.htm",
     GetVersion(),
     GetVersionHistory());
-  a.AddLibrary("ConnectThree version: " + ConnectThree::GetVersion());
+  a.AddLibrary("ConnectThree version: " + Game::GetVersion());
   a.AddLibrary("ConnectThreeWidget version: " + ConnectThreeWidget::GetVersion());
   a.AddLibrary("Special thanks to Mark Wiering for his excellent bug reports");
   a.AddLibrary("TestTimer version: " + TestTimer::GetVersion());
   return a;
 }
 
-ribi::Help ribi::con3::ConnectThreeMenuDialog::GetHelp() const noexcept
+ribi::Help ribi::con3::MenuDialog::GetHelp() const noexcept
 {
   return Help(
     this->GetAbout().GetFileTitle(),
@@ -106,21 +107,12 @@ ribi::Help ribi::con3::ConnectThreeMenuDialog::GetHelp() const noexcept
   );
 }
 
-boost::shared_ptr<const ribi::Program> ribi::con3::ConnectThreeMenuDialog::GetProgram() const noexcept
+std::string ribi::con3::MenuDialog::GetVersion() const noexcept
 {
-  const boost::shared_ptr<const ribi::Program> p {
-    new ProgramConnectThree
-  };
-  assert(p);
-  return p;
+  return "7.0";
 }
 
-std::string ribi::con3::ConnectThreeMenuDialog::GetVersion() const noexcept
-{
-  return "6.6";
-}
-
-std::vector<std::string> ribi::con3::ConnectThreeMenuDialog::GetVersionHistory() const noexcept
+std::vector<std::string> ribi::con3::MenuDialog::GetVersionHistory() const noexcept
 {
   return {
     "2007-xx-xx: version 1.0: initial version as part of K3OpEenRij",
@@ -132,12 +124,13 @@ std::vector<std::string> ribi::con3::ConnectThreeMenuDialog::GetVersionHistory()
     "2013-07-11: version 6.3: transitioned to Qt5 and Boost 1.54.0",
     "2013-07-21: version 6.4: improved looks",
     "2013-08-06: version 6.5: facilitate K3OpEenRij using ConnectThree classes",
-    "2014-01-23: version 6.6: command-line version displays a game"
+    "2014-01-23: version 6.6: command-line version displays a game",
+    "2015-11-14: version 7.0: moved to own GitHub"
   };
 }
 
 #ifndef NDEBUG
-void ribi::con3::ConnectThreeMenuDialog::Test() noexcept
+void ribi::con3::MenuDialog::Test() noexcept
 {
   {
     static bool is_tested{false};
@@ -145,7 +138,7 @@ void ribi::con3::ConnectThreeMenuDialog::Test() noexcept
     is_tested = true;
   }
   const TestTimer test_timer(__func__,__FILE__,1.0);
-  ConnectThreeMenuDialog d;
+  MenuDialog d;
   d.Execute(std::vector<std::string>(1,"connectthree"));
 }
 #endif

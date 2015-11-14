@@ -31,6 +31,8 @@ namespace con3 {
 ///and checks that these are present
 struct ConnectThreeResources
 {
+  ConnectThreeResources();
+
   ///Creates all resources
   ///Throws std::runtime_error if one of these cannot be created from resources
   ConnectThreeResources(
@@ -46,8 +48,6 @@ struct ConnectThreeResources
     const std::string& quit_text,
     const std::string& winner_text
     );
-
-  virtual ~ConnectThreeResources() noexcept;
 
   ///Creates a file
   ///Throws std::runtime_error if it cannot be created from resources
@@ -74,7 +74,6 @@ struct ConnectThreeResources
   void RemoveFiles() const noexcept;
 
   private:
-  //const std::string m_background_filename;
   const std::vector<std::string> m_computers_filenames;
   const std::string m_computer_grey_filename;
   const std::string m_css;
