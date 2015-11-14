@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
   START_TRACE();
-  ribi::con3::ConnectThreeResources resources;
+  ribi::con3::Resources resources;
 
   ribi::con3::QtMenuDialog w(resources);
   {

@@ -29,13 +29,13 @@ namespace con3 {
 
 ///ConnectThreeResources contains all resources' filenames
 ///and checks that these are present
-struct ConnectThreeResources
+struct Resources
 {
-  ConnectThreeResources();
+  Resources();
 
   ///Creates all resources
   ///Throws std::runtime_error if one of these cannot be created from resources
-  ConnectThreeResources(
+  Resources(
     const std::vector<std::string>& computers_filenames,
     const std::string& computer_grey_filename,
     const std::string& css,

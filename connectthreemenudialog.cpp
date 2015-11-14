@@ -47,19 +47,17 @@ int ribi::con3::MenuDialog::ExecuteSpecific(const std::vector<std::string>& argv
     return 1;
   }
 
-  boost::shared_ptr<Game> c {
-    new Game(15,5)
-  };
+  Game c(15,5);
   const std::bitset<3> is_player_human(0);
-  while (c->GetWinner() == Winner::no_winner)
+  while (c.GetWinner() == Winner::no_winner)
   {
-    c->DoMove(c->SuggestMove(is_player_human));
-    std::cout << (*c)
+    c.DoMove(c.SuggestMove(is_player_human));
+    std::cout << c
       << std::endl
       << std::endl;
   }
 
-  switch (c->GetWinner())
+  switch (c.GetWinner())
   {
     case Winner::player1  : std::cout << "Player 1 won the game"; break;
     case Winner::player2  : std::cout << "Player 2 won the game"; break;

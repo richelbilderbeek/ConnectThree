@@ -40,7 +40,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #pragma GCC diagnostic pop
 
 ribi::con3::QtMenuDialog::QtMenuDialog(
-  const ConnectThreeResources& resources,
+  const Resources& resources,
   QWidget *parent
 )
   : QtHideAndShowDialog(parent),
@@ -99,7 +99,7 @@ void ribi::con3::QtMenuDialog::Test() noexcept
   {
     MenuDialog();
   }
-  const ConnectThreeResources resources;
+  const Resources resources;
   QtGameDialog d(resources,std::bitset<3>(false));
   const TestTimer test_timer(__func__,__FILE__,1.0);
 }

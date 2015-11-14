@@ -42,7 +42,7 @@ class QtMenuDialog : public QtHideAndShowDialog
 public:
   ///Throws an exception if the resources cannot be found
   explicit QtMenuDialog(
-    const ConnectThreeResources& resources,
+    const Resources& resources,
     QWidget *parent = 0
   );
   QtMenuDialog(const QtMenuDialog&) = delete;
@@ -51,7 +51,7 @@ public:
 
 private:
   Ui::QtConnectThreeMenuDialog *ui;
-  const ConnectThreeResources& m_resources;
+  const Resources& m_resources;
   QtSelectPlayerWidget * m_select; //Management handled by QDialog
 
 private slots:

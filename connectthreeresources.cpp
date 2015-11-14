@@ -33,8 +33,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma GCC diagnostic pop
 
-ribi::con3::ConnectThreeResources::ConnectThreeResources()
-  : ConnectThreeResources(
+ribi::con3::Resources::Resources()
+  : Resources(
     {
       "ConnectThreeComputer1.png",
       "ConnectThreeComputer2.png",
@@ -66,7 +66,7 @@ ribi::con3::ConnectThreeResources::ConnectThreeResources()
   Create();
 }
 
-ribi::con3::ConnectThreeResources::ConnectThreeResources(
+ribi::con3::Resources::Resources(
   const std::vector<std::string>& computers_filenames,
   const std::string& computer_grey_filename,
   const std::string& css,
@@ -94,7 +94,7 @@ ribi::con3::ConnectThreeResources::ConnectThreeResources(
   Create();
 }
 
-void ribi::con3::ConnectThreeResources::Create() const
+void ribi::con3::Resources::Create() const
 {
   //CheckFile(m_background_filename);
   for (const std::string filename: m_computers_filenames) { CreateFile(filename); }
@@ -109,7 +109,7 @@ void ribi::con3::ConnectThreeResources::Create() const
   CreateFile(m_instructions_wrong_filename);
 }
 
-void ribi::con3::ConnectThreeResources::CreateFile(const std::string& s)
+void ribi::con3::Resources::CreateFile(const std::string& s)
 {
   if (!fileio::FileIo().IsRegularFile(s))
   {
@@ -129,7 +129,7 @@ void ribi::con3::ConnectThreeResources::CreateFile(const std::string& s)
 }
 
 ///Removes all files
-void ribi::con3::ConnectThreeResources::RemoveFiles() const noexcept
+void ribi::con3::Resources::RemoveFiles() const noexcept
 {
   for (const std::string filename: m_computers_filenames) { std::remove(filename.c_str()); }
   for (const std::string filename: m_players_filenames) { std::remove(filename.c_str()); }

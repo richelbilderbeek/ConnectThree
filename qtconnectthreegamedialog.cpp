@@ -39,7 +39,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #pragma GCC diagnostic pop
 
 ribi::con3::QtGameDialog::QtGameDialog(
-  const ConnectThreeResources& resources,
+  const Resources& resources,
   const std::bitset<3>& is_player_human,
   QWidget *parent
 ) noexcept
@@ -165,7 +165,7 @@ void ribi::con3::QtGameDialog::Test() noexcept
     is_tested = true;
   }
   const TestTimer test_timer(__func__,__FILE__,1.0);
-  const ConnectThreeResources resources;
+  const Resources resources;
   const std::unique_ptr<const QtGameDialog> d {
     new QtGameDialog(resources,std::bitset<3>(false))
   };
