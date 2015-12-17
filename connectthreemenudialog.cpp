@@ -26,7 +26,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "connectthreegame.h"
 #include "connectthreewidget.h"
 #include "connectthreemove.h"
-#include "richelbilderbeekprogram.h"
 
 #include <cassert>
 #include <iostream>
