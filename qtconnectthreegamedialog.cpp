@@ -72,8 +72,9 @@ ribi::con3::QtGameDialog::QtGameDialog(
 
   //Qt5
   //QObject::connect(ui->button_quit,&QPushButton::clicked,this,&ribi::con3::QtGameDialog::close);
-  QObject::connect(ui->button_quit,SIGNAL(clicked(bool)),this,SLOT(close()));
+  //QObject::connect(ui->button_quit,SIGNAL(clicked(bool)),this,SLOT(close()));
 
+  QObject::connect(ui->button_quit,SIGNAL(clicked()),this,SLOT(close()));
   m_board->m_signal_valid_move.connect(boost::bind(&ribi::con3::QtGameDialog::OnValidMove,this));
 
   //Put the dialog in the screen center
