@@ -1,5 +1,4 @@
-INCLUDEPATH += \
-    ../ConnectThree
+INCLUDEPATH += ../ConnectThree
 
 SOURCES += \
     ../ConnectThree/connectthreemenudialog.cpp \

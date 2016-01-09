@@ -45,7 +45,7 @@ ribi::con3::QtMenuDialog::QtMenuDialog(
 )
   : QtHideAndShowDialog(parent),
     ui(new Ui::QtConnectThreeMenuDialog),
-    m_resources{resources},
+    m_resources(resources),
     m_select{new QtSelectPlayerWidget}
 {
   #ifndef NDEBUG

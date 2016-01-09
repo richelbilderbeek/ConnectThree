@@ -4,6 +4,7 @@
 #pragma GCC diagnostic ignored "-Wunused-but-set-parameter"
 #include <QApplication>
 
+#include <cassert>
 #include "fileio.h"
 #include "qtconnectthreemenudialog.h"
 #include "trace.h"
