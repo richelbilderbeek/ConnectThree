@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 /*
 GameConnectThree, connect-three game
-Copyright (C) 2010-2015 Richel Bilderbeek
+Copyright (C) 2010-2016 Richel Bilderbeek
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -118,7 +118,7 @@ void ribi::con3::Resources::CreateFile(const std::string& s)
     f.copy(s.c_str());
     if (!fileio::FileIo().IsRegularFile(s))
     {
-      const std::string error = "ConnectThreeResources::CreateFile: file not found: '" + s
+      const std::string error = "Resources::CreateFile: file not found: '" + s
         + "\', please add the file to a resource file, or correct the filename";
       TRACE(s);
       throw std::runtime_error(error);

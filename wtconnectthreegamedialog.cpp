@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 /*
 GameConnectThree, connect-three game
-Copyright (C) 2010-2015 Richel Bilderbeek
+Copyright (C) 2010-2016 Richel Bilderbeek
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,14 +33,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <Wt/WTimer>
 #include <Wt/WResource>
 
-#include "connectthree.h"
+#include "connectthreegame.h"
 #include "connectthreeresources.h"
 #include "trace.h"
 #include "wtconnectthreewidget.h"
 #pragma GCC diagnostic pop
 
-ribi::con3::WtConnectThreeGameDialog::WtConnectThreeGameDialog(
-  const boost::shared_ptr<const ConnectThreeResources> resources,
+ribi::con3::WtGameDialog::WtGameDialog(
+  const Resources& resources,
   const std::bitset<3>& is_player_human)
   : m_board{},
     m_is_player_human(is_player_human),
@@ -54,7 +54,7 @@ ribi::con3::WtConnectThreeGameDialog::WtConnectThreeGameDialog(
 
   m_timer->timeout().connect(
     this,
-    &ribi::con3::WtConnectThreeGameDialog::DoComputerTurn);
+    &ribi::con3::WtGameDialog::DoComputerTurn);
   m_timer->setInterval(100);
 
 
@@ -62,12 +62,12 @@ ribi::con3::WtConnectThreeGameDialog::WtConnectThreeGameDialog(
   //OnValidMove(); //Draw screen
 }
 
-ribi::con3::WtConnectThreeGameDialog::~WtConnectThreeGameDialog()
+ribi::con3::WtGameDialog::~WtGameDialog()
 {
   m_timer->stop();
 }
 
-void ribi::con3::WtConnectThreeGameDialog::DoComputerTurn()
+void ribi::con3::WtGameDialog::DoComputerTurn()
 {
   assert(m_board);
   if (m_board->IsComputerTurn()
@@ -81,7 +81,7 @@ void ribi::con3::WtConnectThreeGameDialog::DoComputerTurn()
 ///OnValidMove is called after a valid move. The game
 ///is either terminated, or the next player can do
 ///his/her move.
-void ribi::con3::WtConnectThreeGameDialog::OnValidMove()
+void ribi::con3::WtGameDialog::OnValidMove()
 {
   if (m_board->GetWinner() == Winner::no_winner)
   {
@@ -93,7 +93,7 @@ void ribi::con3::WtConnectThreeGameDialog::OnValidMove()
   ShowWinner();
 }
 
-void ribi::con3::WtConnectThreeGameDialog::RestartGame()
+void ribi::con3::WtGameDialog::RestartGame()
 {
   m_state = state_playing;
   ShowGame();
@@ -103,7 +103,7 @@ void ribi::con3::WtConnectThreeGameDialog::RestartGame()
   StartTimer();
 }
 
-void ribi::con3::WtConnectThreeGameDialog::SetIsPlayerHuman(const std::bitset<3>& is_player_human)
+void ribi::con3::WtGameDialog::SetIsPlayerHuman(const std::bitset<3>& is_player_human)
 {
   if (m_is_player_human != is_player_human)
   {
@@ -115,14 +115,14 @@ void ribi::con3::WtConnectThreeGameDialog::SetIsPlayerHuman(const std::bitset<3>
   }
 }
 
-void ribi::con3::WtConnectThreeGameDialog::ShowGame()
+void ribi::con3::WtGameDialog::ShowGame()
 {
   assert(m_state == state_playing);
   this->clear();
-  m_board = new WtConnectThreeWidget(m_resources,m_is_player_human,16,8);
+  m_board = new WtWidget(m_resources,m_is_player_human,16,8);
   m_board->m_signal_valid_move.connect(
     boost::bind(
-      &ribi::con3::WtConnectThreeGameDialog::OnValidMove,
+      &ribi::con3::WtGameDialog::OnValidMove,
       this));
   assert(m_board);
   assert(m_board->GetWinner() == Winner::no_winner);
@@ -131,13 +131,13 @@ void ribi::con3::WtConnectThreeGameDialog::ShowGame()
   this->addWidget(new Wt::WBreak);
   m_players = {
     new Wt::WImage(
-      m_resources->GetPlayersFilenames()[0],
+      m_resources.GetPlayersFilenames()[0],
         "Player 1"),
     new Wt::WImage(
-      m_resources->GetPlayersFilenames()[1],
+      m_resources.GetPlayersFilenames()[1],
         "Player 2"),
     new Wt::WImage(
-      m_resources->GetPlayersFilenames()[2],
+      m_resources.GetPlayersFilenames()[2],
         "Player 3")
     };
   assert(m_players.size() == 3);
@@ -150,7 +150,7 @@ void ribi::con3::WtConnectThreeGameDialog::ShowGame()
   UpdatePlayersPanel();
 }
 
-void ribi::con3::WtConnectThreeGameDialog::ShowWinner()
+void ribi::con3::WtGameDialog::ShowWinner()
 {
   assert(m_state = state_winner);
   assert(m_board->GetWinner() != Winner::no_winner);
@@ -169,23 +169,19 @@ void ribi::con3::WtConnectThreeGameDialog::ShowWinner()
   {
       case Winner::player1:
         winner->setImageRef(
-          m_resources
-            ->GetPlayersFilenames()[0]);
+          m_resources.GetPlayersFilenames()[0]);
         break;
       case Winner::player2:
         winner->setImageRef(
-          m_resources
-            ->GetPlayersFilenames()[1]);
+          m_resources.GetPlayersFilenames()[1]);
         break;
       case Winner::player3:
         winner->setImageRef(
-          m_resources
-            ->GetPlayersFilenames()[2]);
+          m_resources.GetPlayersFilenames()[2]);
         break;
       case Winner::draw:
         winner->setImageRef(
-          m_resources
-            ->GetEmptyFilename());
+          m_resources.GetEmptyFilename());
         break;
       default:
         assert(!"Should not get here");
@@ -203,11 +199,12 @@ void ribi::con3::WtConnectThreeGameDialog::ShowWinner()
     Wt::WPushButton * const button(new Wt::WPushButton("Restart",this));
     button->clicked().connect(
       this,
-      &ribi::con3::WtConnectThreeGameDialog::RestartGame);
+      &ribi::con3::WtGameDialog::RestartGame
+    );
   }
 }
 
-void ribi::con3::WtConnectThreeGameDialog::UpdatePlayersPanel()
+void ribi::con3::WtGameDialog::UpdatePlayersPanel()
 {
   assert(m_board);
   assert(m_players.size() == 3);
@@ -231,33 +228,33 @@ void ribi::con3::WtConnectThreeGameDialog::UpdatePlayersPanel()
 
       if (m_board->GetActivePlayer() == i_p)
       {
-        m_players[i]->setImageRef(m_resources->GetPlayersFilenames()[i]);
+        m_players[i]->setImageRef(m_resources.GetPlayersFilenames()[i]);
       }
       else
       {
-        m_players[i]->setImageRef(m_resources->GetPlayersGreyFilenames()[i]);
+        m_players[i]->setImageRef(m_resources.GetPlayersGreyFilenames()[i]);
       }
     }
     else
     {
       if (m_board->GetActivePlayer() == i_p)
       {
-        m_players[i]->setImageRef(m_resources->GetComputersFilenames()[i]);
+        m_players[i]->setImageRef(m_resources.GetComputersFilenames()[i]);
       }
       else
       {
-        m_players[i]->setImageRef(m_resources->GetComputerGreyFilename());
+        m_players[i]->setImageRef(m_resources.GetComputerGreyFilename());
       }
     }
   }
 }
 
-void ribi::con3::WtConnectThreeGameDialog::PauseTimer()
+void ribi::con3::WtGameDialog::PauseTimer()
 {
   m_timer->stop();
 }
 
-void ribi::con3::WtConnectThreeGameDialog::StartTimer()
+void ribi::con3::WtGameDialog::StartTimer()
 {
   m_timer->start();
 }

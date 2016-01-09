@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 /*
 GameConnectThree, connect-three game
-Copyright (C) 2010-2015 Richel Bilderbeek
+Copyright (C) 2010-2016 Richel Bilderbeek
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -79,10 +79,11 @@ ribi::About ribi::con3::MenuDialog::GetAbout() const noexcept
     "ConnectThree",
     "connect-three game",
     "the 14th of November 2015",
-    "2010-2015",
+    "2010-2016",
     "http://www.richelbilderbeek.nl/GameConnectThree.htm",
     GetVersion(),
-    GetVersionHistory());
+    GetVersionHistory()
+  );
   a.AddLibrary("ConnectThree version: " + Game::GetVersion());
   a.AddLibrary("ConnectThreeWidget version: " + ConnectThreeWidget::GetVersion());
   a.AddLibrary("Special thanks to Mark Wiering for his excellent bug reports");
@@ -106,7 +107,7 @@ ribi::Help ribi::con3::MenuDialog::GetHelp() const noexcept
 
 std::string ribi::con3::MenuDialog::GetVersion() const noexcept
 {
-  return "7.0";
+  return "7.1";
 }
 
 std::vector<std::string> ribi::con3::MenuDialog::GetVersionHistory() const noexcept
@@ -122,7 +123,8 @@ std::vector<std::string> ribi::con3::MenuDialog::GetVersionHistory() const noexc
     "2013-07-21: version 6.4: improved looks",
     "2013-08-06: version 6.5: facilitate K3OpEenRij using ConnectThree classes",
     "2014-01-23: version 6.6: command-line version displays a game",
-    "2015-11-14: version 7.0: moved to own GitHub"
+    "2015-11-14: version 7.0: moved to own GitHub",
+    "2016-01-09: version 7.1: web application also works again",
   };
 }
 

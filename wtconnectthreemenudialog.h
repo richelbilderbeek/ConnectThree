@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 /*
 GameConnectThree, connect-three game
-Copyright (C) 2010-2015 Richel Bilderbeek
+Copyright (C) 2010-2016 Richel Bilderbeek
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -46,28 +46,28 @@ struct WtAboutDialog;
 
 namespace con3 {
 
-struct WtConnectThreeMenuDialog : public Wt::WContainerWidget
+struct WtMenuDialog : public Wt::WContainerWidget
 {
-  WtConnectThreeMenuDialog();
-  WtConnectThreeMenuDialog(
-    const boost::shared_ptr<const ConnectThreeResources> resources
+  //WtConnectThreeMenuDialog();
+  WtMenuDialog(
+    const Resources& resources
   );
-  WtConnectThreeMenuDialog(const WtConnectThreeMenuDialog&) = delete;
-  WtConnectThreeMenuDialog& operator=(const WtConnectThreeMenuDialog&) = delete;
+  WtMenuDialog(const WtMenuDialog&) = delete;
+  WtMenuDialog& operator=(const WtMenuDialog&) = delete;
 
   private:
-  WtConnectThreeGameDialog * m_game;
+  WtGameDialog * m_game;
   Wt::WMenu * m_menu;
   WtSelectPlayerWidget * m_select;
-  WtConnectThreeGameDialog * CreateNewGameDialog();
+
+  WtGameDialog * CreateNewGameDialog();
   Wt::WWidget * CreateNewWelcomeDialog() const;
   Wt::WWidget * CreateNewSelectPlayersDialog();
-  static boost::shared_ptr<const ConnectThreeResources> CreateResources();
   void OnMenuItemChanged();
   void OnSelectClicked();
   public:
   static WtAboutDialog * CreateNewAboutDialog();
-  const boost::shared_ptr<const ConnectThreeResources> m_resources;
+  const Resources m_resources;
 };
 
 } //~namespace con3

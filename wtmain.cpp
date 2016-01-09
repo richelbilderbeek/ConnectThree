@@ -15,12 +15,15 @@
 struct WtConnectThreeApplication : public Wt::WApplication
 {
   WtConnectThreeApplication(const Wt::WEnvironment& env)
-    : Wt::WApplication(env)
+    : Wt::WApplication(env), m_resources{}
   {
     this->setTitle("ConnectThree");
     this->useStyleSheet("wt.css");
-    root()->addWidget(new ribi::con3::WtConnectThreeMenuDialog);
+    root()->addWidget(
+      new ribi::con3::WtMenuDialog(m_resources)
+    );
   }
+  const ribi::con3::Resources m_resources;
 };
 
 Wt::WApplication * createApplication(const Wt::WEnvironment& env)

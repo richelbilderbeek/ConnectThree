@@ -1,20 +1,20 @@
-include(../../Libraries/BoostAll.pri)
-include(../../Libraries/Wt.pri)
-include(../../WebApplication.pri)
+include(../RibiLibraries/BoostAll.pri)
+include(../RibiLibraries/Wt.pri)
+include(../RibiLibraries/WebApplication.pri)
 
-include(../../Libraries/GeneralConsole.pri)
-include(../../Libraries/GeneralWeb.pri)
-
-#Specific
-include(../../Classes/CppCanvas/CppCanvas.pri)
-include(../../Classes/CppConnectThree/CppConnectThree.pri)
-include(../../Classes/CppConnectThreeWidget/CppConnectThreeWidget.pri)
-include(../../Classes/CppDotMatrix/CppDotMatrix.pri)
-include(../../Classes/CppTextCanvas/CppTextCanvas.pri)
+include(../RibiLibraries/GeneralConsole.pri)
+include(../RibiLibraries/GeneralWeb.pri)
 
 #Specific
-include(../../Classes/CppWtConnectThreeWidget/CppWtConnectThreeWidget.pri)
+include(../RibiClasses/CppCanvas/CppCanvas.pri)
+include(../RibiClasses/CppConnectThree/CppConnectThree.pri)
+include(../RibiClasses/CppConnectThreeWidget/CppConnectThreeWidget.pri)
+include(../RibiClasses/CppDotMatrix/CppDotMatrix.pri)
+include(../RibiClasses/CppTextCanvas/CppTextCanvas.pri)
 
-include(GameConnectThreeWebsite.pri)
+#Specific
+include(../RibiClasses/CppWtConnectThreeWidget/CppWtConnectThreeWidget.pri)
+
+include(ConnectThreeWebsite.pri)
 
 SOURCES += wtmain.cpp

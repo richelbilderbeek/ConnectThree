@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 /*
 GameConnectThree, connect-three game
-Copyright (C) 2010-2015 Richel Bilderbeek
+Copyright (C) 2010-2016 Richel Bilderbeek
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -36,51 +36,51 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 ///I could not find enough documentation about
 ///how I should use the Wt::WPainter::Image constructor
 ribi::con3::WtSelectPlayerWidget::WtSelectPlayerWidget(
-  const boost::shared_ptr<const ConnectThreeResources> resources)
+  const Resources& resources)
   : m_signal_on_clicked{},
     m_computer_grey(new Wt::WPainter::Image(
-      resources->GetComputerGreyFilename(),
-      resources->GetComputerGreyFilename())
+      resources.GetComputerGreyFilename(),
+      resources.GetComputerGreyFilename())
       ),
     m_computers(
     {
       new Wt::WPainter::Image(
-        resources->GetComputersFilenames()[0],
-        resources->GetComputersFilenames()[0]
+        resources.GetComputersFilenames()[0],
+        resources.GetComputersFilenames()[0]
         ),
       new Wt::WPainter::Image(
-        resources->GetComputersFilenames()[1],
-        resources->GetComputersFilenames()[1]
+        resources.GetComputersFilenames()[1],
+        resources.GetComputersFilenames()[1]
         ),
       new Wt::WPainter::Image(
-        resources->GetComputersFilenames()[2],
-        resources->GetComputersFilenames()[2]
+        resources.GetComputersFilenames()[2],
+        resources.GetComputersFilenames()[2]
         )
     } ),
     m_is_player_human{},
     m_players(
     {
       new Wt::WPainter::Image(
-        resources->GetPlayersFilenames()[0],
-        resources->GetPlayersFilenames()[0]),
+        resources.GetPlayersFilenames()[0],
+        resources.GetPlayersFilenames()[0]),
       new Wt::WPainter::Image(
-        resources->GetPlayersFilenames()[1],
-        resources->GetPlayersFilenames()[1]),
+        resources.GetPlayersFilenames()[1],
+        resources.GetPlayersFilenames()[1]),
       new Wt::WPainter::Image(
-        resources->GetPlayersFilenames()[2],
-        resources->GetPlayersFilenames()[2])
+        resources.GetPlayersFilenames()[2],
+        resources.GetPlayersFilenames()[2])
     } ),
     m_players_grey(
     {
       new Wt::WPainter::Image(
-        resources->GetPlayersGreyFilenames()[0],
-        resources->GetPlayersGreyFilenames()[0]),
+        resources.GetPlayersGreyFilenames()[0],
+        resources.GetPlayersGreyFilenames()[0]),
       new Wt::WPainter::Image(
-        resources->GetPlayersGreyFilenames()[1],
-        resources->GetPlayersGreyFilenames()[1]),
+        resources.GetPlayersGreyFilenames()[1],
+        resources.GetPlayersGreyFilenames()[1]),
       new Wt::WPainter::Image(
-        resources->GetPlayersGreyFilenames()[2],
-        resources->GetPlayersGreyFilenames()[2])
+        resources.GetPlayersGreyFilenames()[2],
+        resources.GetPlayersGreyFilenames()[2])
     } )
 {
   m_is_player_human[0] = true;

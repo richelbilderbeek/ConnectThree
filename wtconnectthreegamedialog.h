@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 /*
 GameConnectThree, connect-three game
-Copyright (C) 2010-2015 Richel Bilderbeek
+Copyright (C) 2010-2016 Richel Bilderbeek
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,8 +29,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #pragma GCC diagnostic ignored "-Wunused-local-typedefs"
 #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 #include <boost/signals2.hpp>
-
 #include <Wt/WContainerWidget>
+#include "connectthreeresources.h"
 #include "connectthreefwd.h"
 #pragma GCC diagnostic pop
 
@@ -45,15 +45,15 @@ namespace con3 {
 
 ///WtConnectThreeGameDialog contains the
 ///ConnectThree game.
-struct WtConnectThreeGameDialog : public Wt::WContainerWidget
+struct WtGameDialog : public Wt::WContainerWidget
 {
   enum State { state_playing, state_winner };
-  explicit WtConnectThreeGameDialog(
-    const boost::shared_ptr<const ConnectThreeResources> resources,
+  explicit WtGameDialog(
+    const Resources& resources,
     const std::bitset<3>& is_player_human = std::bitset<3>(true)
   );
-  WtConnectThreeGameDialog(const WtConnectThreeGameDialog&) = delete;
-  WtConnectThreeGameDialog& operator=(const WtConnectThreeGameDialog&) = delete;
+  WtGameDialog(const WtGameDialog&) = delete;
+  WtGameDialog& operator=(const WtGameDialog&) = delete;
   bool HasWinner() const { return m_state == state_winner; }
   void PauseTimer();
   void RestartGame();
@@ -61,11 +61,11 @@ struct WtConnectThreeGameDialog : public Wt::WContainerWidget
   void StartTimer();
 
   private:
-  ~WtConnectThreeGameDialog();
-  WtConnectThreeWidget * m_board;
+  ~WtGameDialog();
+  WtWidget * m_board;
   std::bitset<3> m_is_player_human;
   std::vector<Wt::WImage *> m_players;
-  const boost::shared_ptr<const ConnectThreeResources> m_resources;
+  const Resources& m_resources;
   State m_state;
   Wt::WTimer * const m_timer;
 
