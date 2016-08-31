@@ -32,3 +32,6 @@ object_script*
 Makefile
 Makefile.Debug
 Makefile.Release
+ui_*
+moc_*
+*_plugin_import.cpp
