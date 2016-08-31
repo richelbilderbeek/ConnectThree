@@ -1,2 +1,0 @@
-ConnectThreeConsole.pro, Lubuntu: FAIL (executable not found)
-ConnectThreeDesktop.pro, Lubuntu: FAIL (executable not found)
