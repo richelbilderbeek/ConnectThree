@@ -18,3 +18,10 @@ include(../RibiClasses/CppWtConnectThreeWidget/CppWtConnectThreeWidget.pri)
 include(ConnectThreeWebsite.pri)
 
 SOURCES += wtmain.cpp
+
+# QResources give this error
+QMAKE_CXXFLAGS += -Wno-unused-variable
+
+# gcov
+QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
+LIBS += -lgcov
