@@ -21,6 +21,7 @@ addons:
 install: 
   - sudo apt-get install -qq g++-5  
   - sudo apt-get install libsfml-dev
+  - ./install_oclint.sh
 
 before_script:
   - ./download_other_githubs.sh
@@ -28,5 +29,9 @@ before_script:
 script: 
   - ./build_console.sh
   - ./build_desktop.sh
+  - ./get_code_cov.sh
   - codecov
+  - ./do_oclint.sh
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
