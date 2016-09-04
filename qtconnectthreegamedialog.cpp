@@ -121,7 +121,7 @@ void ribi::con3::QtGameDialog::OnValidMove() noexcept
         ui->label_player3->setPixmap(QPixmap(m_resources.GetPlayersFilenames()[2].c_str()));
         break;
       default:
-        assert(!"Should not get here");
+        
         throw std::logic_error("Known value of GetCurrentPlayer in WtConnectThreeGameDialog::OnValidMove");
     }
     if (this->m_board->IsComputerTurn())
@@ -147,7 +147,7 @@ void ribi::con3::QtGameDialog::OnValidMove() noexcept
         case Winner::no_winner: filename = m_resources.GetEmptyFilename(); break;
         case Winner::draw     : filename = m_resources.GetEmptyFilename(); break;
         default:
-          assert(!"Should not get here");
+          
           throw std::logic_error("Known value of GetCurrentPlayer in WtConnectThreeGameDialog::OnValidMove");
     }
     QtShowWinnerDialog d(filename,m_resources.GetWinnerText());

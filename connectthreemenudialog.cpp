@@ -63,7 +63,7 @@ int ribi::con3::MenuDialog::ExecuteSpecific(const std::vector<std::string>& argv
     case Winner::player3  : std::cout << "Player 3 won the game"; break;
     case Winner::draw     : std::cout << "The game ended in a draw"; break;
     case Winner::no_winner:
-      assert(!"Should not get here");
+      
       throw std::logic_error("Should not get here");
   }
 
