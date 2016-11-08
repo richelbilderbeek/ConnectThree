@@ -7,13 +7,13 @@ include(../RibiLibraries/GeneralWeb.pri)
 
 #Specific
 include(../RibiClasses/CppCanvas/CppCanvas.pri)
-include(../RibiClasses/CppConnectThree/CppConnectThree.pri)
-include(../RibiClasses/CppConnectThreeWidget/CppConnectThreeWidget.pri)
-include(../RibiClasses/CppDotMatrix/CppDotMatrix.pri)
+include(ConnectThree.pri)
+include(ConnectThreeWidget.pri)
+include(../DotMatrix/DotMatrix.pri)
 include(../RibiClasses/CppTextCanvas/CppTextCanvas.pri)
 
 #Specific
-include(../RibiClasses/CppWtConnectThreeWidget/CppWtConnectThreeWidget.pri)
+include(WtConnectThreeWidget.pri)
 
 include(ConnectThreeWebsite.pri)
 

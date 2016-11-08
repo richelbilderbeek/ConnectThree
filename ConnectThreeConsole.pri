@@ -1,15 +1,12 @@
 INCLUDEPATH += ../ConnectThree
 
 SOURCES += \
-    ../ConnectThree/connectthreemenudialog.cpp \
-    ../ConnectThree/connectthreeresources.cpp
+    $$PWD/connectthreemenudialog.cpp \
+    $$PWD/connectthreeresources.cpp
 
 HEADERS  += \
-    ../ConnectThree/connectthreemenudialog.h \
-    ../ConnectThree/connectthreeresources.h
-
-OTHER_FILES += \
-    ../ConnectThree/Licence.txt
+    $$PWD/connectthreemenudialog.h \
+    $$PWD/connectthreeresources.h
 
 RESOURCES += \
-    ../ConnectThree/ConnectThree.qrc
+    $$PWD/ConnectThree.qrc

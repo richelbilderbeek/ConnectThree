@@ -1,10 +1,10 @@
-include(../RibiLibraries/ConsoleApplication.pri)
+include(../RibiLibraries/ConsoleApplicationNoWeffcpp.pri)
 include(../RibiLibraries/Boost.pri)
 include(../RibiLibraries/GeneralConsole.pri)
 
 #Specific, console
-include(../RibiClasses/CppConnectThree/CppConnectThree.pri)
-include(../RibiClasses/CppConnectThreeWidget/CppConnectThreeWidget.pri)
+include(ConnectThree.pri)
+include(ConnectThreeWidget.pri)
 
 include(ConnectThreeConsole.pri)
 
