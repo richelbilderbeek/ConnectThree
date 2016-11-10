@@ -10,10 +10,6 @@ namespace con3 {
 struct MoveFactory
 {
   Move Create(const int x, const int y, const Player player) const noexcept;
-
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
 };
 
 } //~namespace con3

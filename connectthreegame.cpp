@@ -33,7 +33,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include "connectthreemove.h"
 #include "connectthreemovefactory.h"
-#include "trace.h"
+
 #pragma GCC diagnostic pop
 
 ribi::con3::Game::Game(
@@ -103,16 +103,6 @@ ribi::con3::Square ribi::con3::Game::GetSquare(const int x, const int y) const n
   assert(x >= 0);
   assert(x < static_cast<int>(m_area.size()));
   assert(y >= 0);
-  #ifndef NDEBUG
-  if (y >= static_cast<int>(m_area[x].size()))
-  {
-    TRACE("ERROR");
-    TRACE(y);
-    TRACE(m_area.size());
-    TRACE(m_area[x].size());
-    TRACE("BREAK");
-  }
-  #endif
   assert(y < static_cast<int>(m_area[x].size()));
   return m_area[x][y];
 }

@@ -27,7 +27,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <stdexcept>
 
 #include "fileio.h"
-#include "trace.h"
+
 
 #include <QFile>
 
@@ -120,11 +120,9 @@ void ribi::con3::Resources::CreateFile(const std::string& s)
     {
       const std::string error = "Resources::CreateFile: file not found: '" + s
         + "\', please add the file to a resource file, or correct the filename";
-      TRACE(s);
       throw std::runtime_error(error);
     }
   }
-  if (!fileio::FileIo().IsRegularFile(s)) { TRACE(s); }
   assert(fileio::FileIo().IsRegularFile(s));
 }
 

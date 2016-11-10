@@ -1,12 +1,12 @@
 INCLUDEPATH += \
-    ../RibiClasses/CppConnectThreeWidget
+    ../ConnectThree
 
 SOURCES += \
-    ../RibiClasses/CppConnectThreeWidget/connectthreewidget.cpp
+    $$PWD/connectthreewidget.cpp
 
 HEADERS  += \
-    ../RibiClasses/CppConnectThreeWidget/connectthreewidget.h
+    $$PWD/connectthreewidget.h
 
 OTHER_FILES += \
-    ../RibiClasses/CppConnectThreeWidget/Licence.txt
+    $$PWD/Licence.txt
 

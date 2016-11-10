@@ -30,8 +30,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include "connectthreegame.h"
 #include "connectthreemove.h"
-#include "testtimer.h"
-#include "trace.h"
 
 ribi::con3::ConnectThreeWidget::ConnectThreeWidget(
   const std::bitset<3>& is_player_human,
@@ -194,7 +192,6 @@ void ribi::con3::ConnectThreeWidget::Test() noexcept
     if (is_tested) return;
     is_tested = true;
   }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
   ConnectThreeWidget widget;
   assert(widget.IsHuman(Player::player1));
   assert(widget.IsHuman(Player::player2));
