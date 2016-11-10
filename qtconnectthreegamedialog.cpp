@@ -31,11 +31,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "connectthreewidget.h"
 #include "connectthreeresources.h"
 #include "ui_qtconnectthreegamedialog.h"
-#include "testtimer.h"
 #include "qtconnectthreegamedialog.h"
 #include "qtconnectthreewidget.h"
 #include "qtshowwinnerdialog.h"
-#include "trace.h"
 #pragma GCC diagnostic pop
 
 ribi::con3::QtGameDialog::QtGameDialog(
@@ -168,7 +166,6 @@ void ribi::con3::QtGameDialog::Test() noexcept
     if (is_tested) return;
     is_tested = true;
   }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
   const Resources resources;
   const std::unique_ptr<const QtGameDialog> d {
     new QtGameDialog(resources,std::bitset<3>(false))

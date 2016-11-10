@@ -34,9 +34,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "qtconnectthreegamedialog.h"
 #include "qtconnectthreewidget.h"
 #include "qtselectplayerwidget.h"
-#include "testtimer.h"
 #include "ui_qtconnectthreemenudialog.h"
-#include "trace.h"
 #pragma GCC diagnostic pop
 
 ribi::con3::QtMenuDialog::QtMenuDialog(
@@ -48,13 +46,9 @@ ribi::con3::QtMenuDialog::QtMenuDialog(
     m_resources(resources),
     m_select{new QtSelectPlayerWidget}
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
-
   ui->setupUi(this);
-  assert(layout());
 
+  assert(layout());
   layout()->addWidget(m_select);
 }
 
@@ -87,20 +81,3 @@ void ribi::con3::QtMenuDialog::on_button_quit_clicked() noexcept
 {
   close();
 }
-
-#ifndef NDEBUG
-void ribi::con3::QtMenuDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  {
-    MenuDialog();
-  }
-  const Resources resources;
-  QtGameDialog d(resources,std::bitset<3>(false));
-  const TestTimer test_timer(__func__,__FILE__,1.0);
-}
-#endif

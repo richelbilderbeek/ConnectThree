@@ -59,10 +59,6 @@ private slots:
   void on_button_start_clicked() noexcept;
   void on_button_about_clicked() noexcept;
   void on_button_quit_clicked() noexcept;
-
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
 };
 
 } //~namespace con3
