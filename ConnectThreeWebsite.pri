@@ -1,7 +1,7 @@
 include(../ConnectThree/ConnectThreeConsole.pri)
 
 SOURCES += \
-    ../ConnectThree/wtselectplayerwidget.cpp \
+    ../ConnectThree/wtconnectthreeselectplayerwidget.cpp \
     ../ConnectThree/wtconnectthreemenudialog.cpp \
     ../ConnectThree/wtconnectthreegamedialog.cpp
 
@@ -9,7 +9,7 @@ SOURCES += \
 #    ../ConnectThree/wtconnectthreeresources.cpp \
 
 HEADERS  += \
-    ../ConnectThree/wtselectplayerwidget.h \
+    ../ConnectThree/wtconnectthreeselectplayerwidget.h \
     ../ConnectThree/wtconnectthreemenudialog.h \
     ../ConnectThree/wtconnectthreegamedialog.h
 
