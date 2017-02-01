@@ -28,7 +28,6 @@ namespace con3 {
 
 struct WtMenuDialog : public Wt::WContainerWidget
 {
-  //WtConnectThreeMenuDialog();
   WtMenuDialog(
     const Resources& resources
   );
