@@ -49,9 +49,9 @@ script:
   - sleep 10
   - sudo killall ConnectThreeDesktop
   # Codecov
-  - ./get_code_cov.sh
+  - ./get_code_cov
   - codecov
-  - ./do_oclint.sh
+  - ./do_oclint
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
