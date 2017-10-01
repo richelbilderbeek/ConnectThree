@@ -671,8 +671,8 @@ bool ribi::con3::Game::IsPlayerHuman(const Player player, const std::bitset<3>& 
     case Player::player3: return is_player_human[2];
     default:
       assert(!"Should not get here");
-      throw std::logic_error("Unknown value of player");
   }
+  return is_player_human[0];
 }
 
 ribi::con3::Square ribi::con3::Game::PlayerToSquare(const Player player) const noexcept
@@ -684,8 +684,8 @@ ribi::con3::Square ribi::con3::Game::PlayerToSquare(const Player player) const n
     case Player::player3: return Square::player3;
     default:
       assert(!"Should not get here");
-      throw std::logic_error("Unknown player");
   }
+  return Square::player1;
 }
 
 
@@ -705,8 +705,8 @@ ribi::con3::Player ribi::con3::Game::SquareToPlayer(const Square square) const n
     case Square::player3: return Player::player3;
     default:
       assert(!"Should not get here");
-      throw std::logic_error("Unknown Square");
   }
+  return Player::player1;
 }
 
 ribi::con3::Winner ribi::con3::Game::SquareToWinner(const Square square) const noexcept
@@ -718,8 +718,8 @@ ribi::con3::Winner ribi::con3::Game::SquareToWinner(const Square square) const n
     case Square::player3: return Winner::player3;
     default:
       assert(!"Should not get here");
-      throw std::logic_error("Unknown Square");
   }
+  return Winner::player1;
 }
 
 #ifndef NDEBUG

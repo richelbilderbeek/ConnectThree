@@ -153,8 +153,8 @@ int ribi::con3::ConnectThreeWidget::PlayerToIndex(const Player player) const noe
     case Player::player3: return 2;
     default:
       assert(!"Should not get here");
-      throw std::logic_error("Unknown player");
   }
+  return 0;
 }
 
 void ribi::con3::ConnectThreeWidget::Restart() noexcept

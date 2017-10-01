@@ -12,5 +12,5 @@ ribi::con3::Player ribi::con3::GetNextPlayer(const ribi::con3::Player player) no
     case Player::player3: return Player::player1;
   }
   assert(!"Should not get here");
-  throw std::logic_error("Unknown value of Player");
+  return Player::player1;
 }
