@@ -84,6 +84,14 @@ ribi::con3::WtSelectPlayerWidget::WtSelectPlayerWidget(
   this->update();
 }
 
+ribi::con3::WtSelectPlayerWidget::~WtSelectPlayerWidget() noexcept
+{
+  delete m_computer_grey;
+  for (auto& p: m_computers) delete p;
+  for (auto& p: m_players) delete p;
+  for (auto& p: m_players_grey) delete p;
+}
+
 void ribi::con3::WtSelectPlayerWidget::OnClick(const Wt::WMouseEvent& e)
 {
   const int sprite_width  = m_computer_grey->width();

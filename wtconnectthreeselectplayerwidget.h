@@ -31,6 +31,7 @@ struct WtSelectPlayerWidget : public Wt::WPaintedWidget
   );
   WtSelectPlayerWidget(const WtSelectPlayerWidget&) = delete;
   WtSelectPlayerWidget& operator=(const WtSelectPlayerWidget&) = delete;
+  ~WtSelectPlayerWidget() noexcept;
 
   const std::bitset<3>& GetIsPlayerHuman() const { return m_is_player_human; }
   boost::signals2::signal<void ()> m_signal_on_clicked;
