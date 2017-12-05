@@ -120,7 +120,7 @@ const QImage& ribi::con3::QtConnectThreeWidget::GetImage(const Square sprite) co
     case Square::player3: return m_player3;
   }
   assert(!"Should not get here");
-  throw std::logic_error("Unknown ribi::con3::QtConnectThreeWidget::GetImage value");
+  return m_empty;
 }
 
 
