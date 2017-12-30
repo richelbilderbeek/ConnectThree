@@ -9,3 +9,7 @@ C++ game of 'Connect Three' that uses Qt and Wt.
 ![Desktop version 5.2](Screenshots/ConnectThree_5_2.png)
 
 ![Web application version 6.0](Screenshots/ConnectThree_6_0.png)
+
+## External links
+
+ * [Richel Bilderbeek's games](https://github.com/richelbilderbeek/Games)
