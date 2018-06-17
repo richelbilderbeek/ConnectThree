@@ -42,6 +42,10 @@ script:
   - qmake ConnectThreeConsole.pro
   - make
   - ./ConnectThreeConsole
+  # Console Test
+  - qmake ConnectThreeConsoleTest.pro
+  - make
+  - ./ConnectThreeConsoleTest
   # Desktop
   - qmake ConnectThreeDesktop.pro
   - make
