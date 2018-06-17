@@ -30,7 +30,7 @@ struct Game
   );
 
   ///Is there at least one valid move?
-//  bool CanDoAnyMove() const noexcept;
+  //bool CanDoAnyMove() const noexcept;
 
   bool CanDoMove(const int x, const int y) const noexcept;
   int CanGetSquare(const int x, const int y) const noexcept;
@@ -82,9 +82,6 @@ private:
   Square PlayerToSquare(const Player player) const noexcept;
   Player SquareToPlayer(const Square square) const noexcept;
   Winner SquareToWinner(const Square square) const noexcept;
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
 };
 
 std::ostream& operator<<(std::ostream& os, const Game& c);
