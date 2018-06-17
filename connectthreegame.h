@@ -29,9 +29,6 @@ struct Game
     const int n_rows = 12
   );
 
-  ///Is there at least one valid move?
-  //bool CanDoAnyMove() const noexcept;
-
   bool CanDoMove(const int x, const int y) const noexcept;
   int CanGetSquare(const int x, const int y) const noexcept;
   void DoMove(const int x, const int y);

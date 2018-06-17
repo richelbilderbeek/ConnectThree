@@ -29,14 +29,6 @@ ribi::con3::Game::Game(
   assert(GetRows() == n_rows);
 }
 
-
-//bool ribi::con3::Game::CanDoAnyMove() const noexcept {
-//  const bool are_no_moves_possible{
-//    GetAllPossibleMoves().empty()
-//  };
-//  return !are_no_moves_possible;
-//}
-
 bool ribi::con3::Game::CanDoMove(const int x, const int y) const noexcept
 {
   return CanGetSquare(x,y)
