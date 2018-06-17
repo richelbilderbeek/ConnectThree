@@ -44,7 +44,7 @@ script:
   - ./ConnectThreeConsole
   # Console Test
   - qmake ConnectThreeConsoleTest.pro
-  - make
+  - make debug
   - ./ConnectThreeConsoleTest
   # Desktop
   - qmake ConnectThreeDesktop.pro
