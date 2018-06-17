@@ -35,3 +35,4 @@ Makefile.Release
 ui_*
 moc_*
 *_plugin_import.cpp
+*.autosave

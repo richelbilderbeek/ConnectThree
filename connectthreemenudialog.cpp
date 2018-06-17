@@ -10,15 +10,10 @@
 #include <cassert>
 #include <iostream>
 
-
-
 #pragma GCC diagnostic pop
 
 int ribi::con3::MenuDialog::ExecuteSpecific(const std::vector<std::string>& argv) noexcept
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
   const int argc = static_cast<int>(argv.size());
   if (argc != 1)
   {
@@ -105,16 +100,3 @@ std::vector<std::string> ribi::con3::MenuDialog::GetVersionHistory() const noexc
     "2016-01-09: version 7.1: web application also works again",
   };
 }
-
-#ifndef NDEBUG
-void ribi::con3::MenuDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  MenuDialog d;
-  d.Execute(std::vector<std::string>(1,"connectthree"));
-}
-#endif
