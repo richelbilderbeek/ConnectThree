@@ -33,10 +33,6 @@ ribi::con3::QtGameDialog::QtGameDialog(
     m_is_player_human(is_player_human),
     m_resources(resources)
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
-
   ui->setupUi(this);
 
   //Add board widget
@@ -135,19 +131,3 @@ void ribi::con3::QtGameDialog::OnValidMove() noexcept
   }
   this->close();
 }
-
-#ifndef NDEBUG
-void ribi::con3::QtGameDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  const Resources resources;
-  const std::unique_ptr<const QtGameDialog> d {
-    new QtGameDialog(resources,std::bitset<3>(false))
-  };
-  assert(d);
-}
-#endif

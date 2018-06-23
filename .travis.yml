@@ -50,6 +50,10 @@ script:
   - ./ConnectThreeDesktop &
   - sleep 10
   - sudo killall ConnectThreeDesktop
+  # Desktop test
+  - qmake ConnectThreeDesktopTest.pro
+  - make
+  - ./ConnectThreeDesktopTest
   # Codecov
   - ./get_code_cov
   - codecov
