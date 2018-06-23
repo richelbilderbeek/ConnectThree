@@ -52,7 +52,7 @@ script:
   - sudo killall ConnectThreeDesktop
   # Desktop test
   - qmake ConnectThreeDesktopTest.pro
-  - make
+  - make debug
   - ./ConnectThreeDesktopTest
   # Codecov
   - ./get_code_cov
