@@ -41,7 +41,6 @@ ribi::con3::QtGameDialog::QtGameDialog(
     QLayout * const mylayout = new QVBoxLayout;
     mylayout->addWidget(m_board);
     ui->widget->setLayout(mylayout);
-    m_board->setMinimumSize(100,100);
   }
 
   //Qt5
