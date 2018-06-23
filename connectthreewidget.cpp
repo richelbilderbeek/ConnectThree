@@ -19,16 +19,12 @@ ribi::con3::ConnectThreeWidget::ConnectThreeWidget(
     m_x{n_cols / 2},
     m_y{n_rows / 2}
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
   assert(m_x >= 0);
   assert(m_y >= 0);
   assert(n_cols > 0);
   assert(n_rows > 0);
   assert(m_x < n_cols);
   assert(m_y < n_rows);
-
 }
 
 bool ribi::con3::ConnectThreeWidget::CanDoMove(const int x,const int y) const noexcept
@@ -162,34 +158,6 @@ ribi::con3::Move ribi::con3::ConnectThreeWidget::SuggestMove() const
 {
   return m_game.SuggestMove(m_is_player_human);
 }
-
-#ifndef NDEBUG
-void ribi::con3::ConnectThreeWidget::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  ConnectThreeWidget widget;
-  assert(widget.IsHuman(Player::player1));
-  assert(widget.IsHuman(Player::player2));
-  assert(widget.IsHuman(Player::player3));
-  assert(widget.GetGame().GetCols() == 16);
-  assert(widget.GetGame().GetRows() == 12);
-  while (widget.GetGame().GetWinner() == Winner::no_winner)
-  {
-    switch ((std::rand() >> 4) % 5)
-    {
-      case 0: widget.OnKeyPress(Key::up); break;
-      case 1: widget.OnKeyPress(Key::right); break;
-      case 2: widget.OnKeyPress(Key::down); break;
-      case 3: widget.OnKeyPress(Key::left); break;
-      case 4: widget.OnKeyPress(Key::select); break;
-    }
-  }
-}
-#endif
 
 ///Tick does either wait for a human to make his/her move
 ///or lets a computer do its move. Tick must be called by

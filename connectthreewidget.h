@@ -75,10 +75,6 @@ struct ConnectThreeWidget
   bool CanDoMove(const int x, const int y) const noexcept;
   void DoMove(const int x, const int y) noexcept;
   int PlayerToIndex(const Player player) const noexcept;
-
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
 };
 
 } //~namespace con3
