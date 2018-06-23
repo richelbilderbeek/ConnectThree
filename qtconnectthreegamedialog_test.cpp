@@ -11,5 +11,5 @@ void ribi::con3::qtconnectthreegamedialog_test::construct()
   const std::unique_ptr<const QtGameDialog> d {
     new QtGameDialog(resources,std::bitset<3>(false))
   };
-  QVERIFY(d);
+  QVERIFY(d != nullptr);
 }
