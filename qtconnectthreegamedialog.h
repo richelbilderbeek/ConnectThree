@@ -6,8 +6,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Weffc++"
 #pragma GCC diagnostic ignored "-Wunused-local-typedefs"
-#include <boost/signals2.hpp>
-#include "qthideandshowdialog.h"
+#include <QDialog>
 #pragma GCC diagnostic pop
 
 
@@ -21,7 +20,7 @@ namespace con3 {
 struct QtConnectThreeWidget;
 struct Resources;
 
-class QtGameDialog : public QtHideAndShowDialog
+class QtGameDialog : public QDialog
 {
   Q_OBJECT
 
@@ -34,8 +33,6 @@ public:
   QtGameDialog(const QtGameDialog&) = delete;
   QtGameDialog& operator=(const QtGameDialog&) = delete;
   ~QtGameDialog() noexcept;
-
-  boost::signals2::signal<void ()> m_signal_close;
 
 public slots:
   void DoComputerTurn() noexcept;

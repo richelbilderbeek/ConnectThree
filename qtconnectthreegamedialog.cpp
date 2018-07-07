@@ -21,8 +21,7 @@ ribi::con3::QtGameDialog::QtGameDialog(
   const std::bitset<3>& is_player_human,
   QWidget *parent
 ) noexcept
-  : QtHideAndShowDialog(parent),
-    m_signal_close{},
+  : QDialog(parent),
     ui(new Ui::QtConnectThreeGameDialog),
     m_board{
       new QtConnectThreeWidget(
