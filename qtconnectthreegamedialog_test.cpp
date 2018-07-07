@@ -1,7 +1,7 @@
 #include "qtconnectthreegamedialog_test.h"
 #include "qtconnectthreegamedialog.h"
 #include <cassert>
-
+#include <memory>
 #include "qtconnectthreegamedialog.h"
 #include "connectthreeresources.h"
 
