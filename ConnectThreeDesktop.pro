@@ -1,6 +1,17 @@
-include(../RibiLibraries/DesktopApplicationNoWeffcpp.pri)
+CONFIG += c++14
+QMAKE_CXXFLAGS += -std=c++14
 
-include(../RibiLibraries/Boost.pri)
+QMAKE_CXXFLAGS += -Wall -Wextra -Werror -std=c++14
+
+
+CONFIG += debug_and_release
+
+QT += core gui widgets
+
+CONFIG(release, debug|release) {
+  DEFINES += NDEBUG
+}
+
 include(../RibiLibraries/GeneralConsole.pri)
 include(../RibiLibraries/GeneralDesktop.pri)
 
