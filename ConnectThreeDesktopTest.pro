@@ -22,9 +22,6 @@ include(../ConnectThree/QtConnectThreeWidget.pri)
 
 SOURCES += qtmain_test.cpp
 
-# Fix error: unrecognized option '--push-state--no-as-needed'
-QMAKE_LFLAGS += -fuse-ld=gold
-
 # QResources give this error
 QMAKE_CXXFLAGS += -Wno-unused-variable
 
@@ -54,9 +51,9 @@ CONFIG(debug, debug|release) {
   LIBS += -lubsan
 }
 
-# C++14
-CONFIG += c++14
-QMAKE_CXXFLAGS += -std=c++14
+# C++17
+CONFIG += c++17
+QMAKE_CXXFLAGS += -std=c++17
 
 # High warning level, warnings are errors
 # Qt goes bad with -Weffc++
@@ -64,7 +61,7 @@ QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
 QMAKE_CXXFLAGS += -Werror
 
 # Qt5
-QT += core gui widgets concurrent opengl printsupport svg
+QT += core gui widgets
 
 # QTest
 QT += testlib

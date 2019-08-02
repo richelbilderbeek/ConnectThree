@@ -10,9 +10,6 @@ include(ConnectThreeConsole.pri)
 
 SOURCES += main.cpp
 
-# Fix error: unrecognized option '--push-state--no-as-needed'
-QMAKE_LFLAGS += -fuse-ld=gold
-
 # QResources give this error
 QMAKE_CXXFLAGS += -Wno-unused-variable
 
