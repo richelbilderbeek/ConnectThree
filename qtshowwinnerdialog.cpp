@@ -1,5 +1,5 @@
 #pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
+
 #include "qtshowwinnerdialog.h"
 #include <QKeyEvent>
 #include "ui_qtshowwinnerdialog.h"

@@ -1,7 +1,7 @@
 #include "qtconnectthreecanvas.h"
 
 #pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
+
 #include <QKeyEvent>
 #include <QTimer>
 
