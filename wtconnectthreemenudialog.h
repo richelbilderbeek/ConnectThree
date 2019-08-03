@@ -3,7 +3,7 @@
 
 #pragma GCC diagnostic push
 
-#pragma GCC diagnostic ignored "-Wunused-local-typedefs"
+
 #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 #include <boost/scoped_ptr.hpp>
 #include <boost/signals2.hpp>
