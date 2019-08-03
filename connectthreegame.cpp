@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 #include "connectthreegame.h"
@@ -13,7 +13,7 @@
 #include "connectthreemove.h"
 #include "connectthreemovefactory.h"
 
-#pragma GCC diagnostic pop
+
 
 ribi::con3::Game::Game(
   const int n_cols,

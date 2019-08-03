@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 #include "connectthreemenudialog.h"
 
@@ -10,7 +10,7 @@
 #include <cassert>
 #include <iostream>
 
-#pragma GCC diagnostic pop
+
 
 int ribi::con3::MenuDialog::ExecuteSpecific(const std::vector<std::string>& argv) noexcept
 {

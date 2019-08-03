@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -11,7 +11,7 @@
 #include "connectthreemove.h"
 #include "connectthreeresources.h"
 #include "connectthreewidget.h"
-#pragma GCC diagnostic pop
+
 
 const int ribi::con3::QtConnectThreeWidget::m_sprite_width  = 50;
 const int ribi::con3::QtConnectThreeWidget::m_sprite_height = 50;

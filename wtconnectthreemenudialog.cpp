@@ -1,6 +1,6 @@
 #include <cassert>
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -25,7 +25,7 @@
 #include "wtconnectthreewidget.h"
 //#include "qtconnectthreeresources.h"
 #include "wtconnectthreeselectplayerwidget.h"
-#pragma GCC diagnostic pop
+
 
 /*
 ribi::con3::WtConnectThreeMenuDialog::WtConnectThreeMenuDialog()

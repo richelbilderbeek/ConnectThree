@@ -1,6 +1,6 @@
 #include "wtconnectthreegamedialog.h"
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -16,7 +16,7 @@
 #include "connectthreegame.h"
 #include "connectthreeresources.h"
 #include "wtconnectthreewidget.h"
-#pragma GCC diagnostic pop
+
 
 ribi::con3::WtGameDialog::WtGameDialog(
   const Resources& resources,

@@ -1,7 +1,7 @@
 #include "connectthreewidget.h"
 
 // Boost.Test does not play well with -Weffc++
-#pragma GCC diagnostic push
+
 
 #include <boost/test/unit_test.hpp>
 
@@ -29,5 +29,5 @@ BOOST_AUTO_TEST_CASE(play_one_game)
   }
 }
 
-#pragma GCC diagnostic pop
+
 

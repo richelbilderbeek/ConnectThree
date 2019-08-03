@@ -3,11 +3,11 @@
 
 #include <bitset>
 
-#pragma GCC diagnostic push
+
 
 #include <QImage>
 #include <QWidget>
-#pragma GCC diagnostic pop
+
 
 namespace ribi {
 namespace con3 {

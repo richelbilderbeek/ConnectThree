@@ -1,14 +1,14 @@
 #ifndef WTSELECTPLAYERWIDGET_H
 #define WTSELECTPLAYERWIDGET_H
 
-#pragma GCC diagnostic push
+
 
 
 
 #include <boost/signals2.hpp>
 
 #include <Wt/WPaintedWidget>
-#pragma GCC diagnostic pop
+
 
 namespace Wt
 {

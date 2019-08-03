@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -11,7 +11,7 @@
 
 #include <QFile>
 #include <QIcon>
-#pragma GCC diagnostic pop
+
 
 int main(int argc, char *argv[])
 {

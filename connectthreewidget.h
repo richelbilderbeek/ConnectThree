@@ -5,14 +5,14 @@
 #include <string>
 #include <vector>
 
-#pragma GCC diagnostic push
+
 
 
 #include <boost/tuple/tuple.hpp>
 
 #include "connectthreegame.h"
 #include "connectthreefwd.h"
-#pragma GCC diagnostic pop
+
 
 namespace ribi {
 

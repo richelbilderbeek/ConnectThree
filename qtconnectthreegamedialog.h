@@ -3,11 +3,11 @@
 
 #include <bitset>
 
-#pragma GCC diagnostic push
+
 
 
 #include <QDialog>
-#pragma GCC diagnostic pop
+
 
 
 namespace Ui {

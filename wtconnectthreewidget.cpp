@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -13,7 +13,7 @@
 #include "connectthreewidget.h"
 #include "connectthreeresources.h"
 #include "connectthreemove.h"
-#pragma GCC diagnostic pop
+
 
 ///Yes, naming the filename twice feels dumb, but
 ///I could not find enough documentation about

@@ -1,6 +1,6 @@
 #include "qtconnectthreecanvas.h"
 
-#pragma GCC diagnostic push
+
 
 #include <QKeyEvent>
 #include <QTimer>
@@ -8,7 +8,7 @@
 #include "qtcanvas.h"
 #include "textcanvas.h"
 #include "connectthreewidget.h"
-#pragma GCC diagnostic pop
+
 
 ribi::con3::QtConnectThreeCanvas::QtConnectThreeCanvas(
   const std::bitset<3>& is_player_human,

@@ -3,14 +3,14 @@
 
 #include <bitset>
 
-#pragma GCC diagnostic push
+
 
 
 
 #include <boost/signals2.hpp>
 #include <QWidget>
 #include "connectthreewidget.h" //thanks to MOC :-(
-#pragma GCC diagnostic pop
+
 
 namespace ribi {
 namespace con3 {

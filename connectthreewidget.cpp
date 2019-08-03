@@ -1,8 +1,8 @@
-#pragma GCC diagnostic push
+
 
 
 #include "connectthreewidget.h"
-#pragma GCC diagnostic pop
+
 
 #include <cassert>
 #include <stdexcept>

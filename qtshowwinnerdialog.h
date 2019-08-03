@@ -3,12 +3,12 @@
 
 #include <string>
 
-#pragma GCC diagnostic push
+
 
 
 
 #include <QDialog>
-#pragma GCC diagnostic pop
+
 
 namespace Ui {
   class QtShowWinnerDialog;

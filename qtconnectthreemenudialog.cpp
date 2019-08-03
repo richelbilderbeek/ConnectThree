@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -15,7 +15,7 @@
 #include "qtconnectthreewidget.h"
 #include "qtselectplayerwidget.h"
 #include "ui_qtconnectthreemenudialog.h"
-#pragma GCC diagnostic pop
+
 
 ribi::con3::QtMenuDialog::QtMenuDialog(
   const Resources& resources,

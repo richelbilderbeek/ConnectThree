@@ -18,12 +18,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------
 //From http://www.richelbilderbeek.nl/GameConnectThree.htm
 //---------------------------------------------------------------------------
-#pragma GCC diagnostic push
+
 
 #include "qtselectplayerwidget.h"
 #include <QMouseEvent>
 #include <QPainter>
-#pragma GCC diagnostic pop
+
 
 const int ribi::con3::QtSelectPlayerWidget::m_sprite_height = 50;
 const int ribi::con3::QtSelectPlayerWidget::m_sprite_width  = 50;

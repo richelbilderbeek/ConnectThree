@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 #include "connectthreeresources.h"
 
@@ -11,7 +11,7 @@
 
 #include <QFile>
 
-#pragma GCC diagnostic pop
+
 
 ribi::con3::Resources::Resources()
   : Resources(

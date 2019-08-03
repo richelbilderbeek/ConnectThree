@@ -1,7 +1,7 @@
 #ifndef WTCONNECTTHREEMENUDIALOG_H
 #define WTCONNECTTHREEMENUDIALOG_H
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -12,7 +12,7 @@
 
 #include "connectthreeresources.h"
 #include "connectthreefwd.h"
-#pragma GCC diagnostic pop
+
 
 namespace Wt
 {

@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -10,7 +10,7 @@
 #include "wtautoconfig.h"
 #include "wtconnectthreemenudialog.h"
 #include "connectthreeresources.h"
-#pragma GCC diagnostic pop
+
 
 struct WtConnectThreeApplication : public Wt::WApplication
 {

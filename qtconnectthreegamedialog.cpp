@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -14,7 +14,7 @@
 #include "qtconnectthreegamedialog.h"
 #include "qtconnectthreewidget.h"
 #include "qtshowwinnerdialog.h"
-#pragma GCC diagnostic pop
+
 
 ribi::con3::QtGameDialog::QtGameDialog(
   const Resources& resources,

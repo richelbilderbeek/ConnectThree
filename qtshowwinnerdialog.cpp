@@ -1,9 +1,9 @@
-#pragma GCC diagnostic push
+
 
 #include "qtshowwinnerdialog.h"
 #include <QKeyEvent>
 #include "ui_qtshowwinnerdialog.h"
-#pragma GCC diagnostic pop
+
 
 ribi::con3::QtShowWinnerDialog::QtShowWinnerDialog(
   const std::string& filename,

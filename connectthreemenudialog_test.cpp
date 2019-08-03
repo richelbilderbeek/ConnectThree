@@ -1,7 +1,7 @@
 #include "connectthreemenudialog.h"
 
 // Boost.Test does not play well with -Weffc++
-#pragma GCC diagnostic push
+
 
 #include <boost/test/unit_test.hpp>
 
@@ -14,5 +14,5 @@ BOOST_AUTO_TEST_CASE(can_run)
   d.Execute( { "connectthree" } );
 }
 
-#pragma GCC diagnostic pop
+
 

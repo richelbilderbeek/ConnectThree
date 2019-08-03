@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#pragma GCC diagnostic push
+
 
 
 #include <boost/tuple/tuple.hpp>
@@ -14,7 +14,7 @@
 #include "connectthreesquare.h"
 #include "connectthreemove.h"
 #include "connectthreewinner.h"
-#pragma GCC diagnostic pop
+
 
 namespace ribi {
 namespace con3 {

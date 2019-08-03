@@ -4,7 +4,7 @@
 #include <bitset>
 #include <vector>
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -12,7 +12,7 @@
 #include <Wt/WContainerWidget>
 #include "connectthreeresources.h"
 #include "connectthreefwd.h"
-#pragma GCC diagnostic pop
+
 
 namespace Wt
 {

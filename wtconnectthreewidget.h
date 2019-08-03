@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -19,7 +19,7 @@
 #include "connectthreesquare.h"
 #include "connectthreewinner.h"
 #include "connectthreeresources.h"
-#pragma GCC diagnostic pop
+
 
 namespace Wt
 {

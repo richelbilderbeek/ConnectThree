@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -8,7 +8,7 @@
 #include "wtconnectthreeselectplayerwidget.h"
 
 #include <cassert>
-#pragma GCC diagnostic pop
+
 
 ///Yes, naming the filename twice feels dumb, but
 ///I could not find enough documentation about
