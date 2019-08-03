@@ -8,7 +8,7 @@
 #pragma GCC diagnostic push
 
 
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+
 #include <boost/shared_ptr.hpp>
 #include <boost/signals2.hpp>
 

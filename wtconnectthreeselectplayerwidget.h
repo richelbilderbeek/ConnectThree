@@ -4,7 +4,7 @@
 #pragma GCC diagnostic push
 
 
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+
 #include <boost/signals2.hpp>
 
 #include <Wt/WPaintedWidget>
