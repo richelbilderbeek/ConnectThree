@@ -47,7 +47,7 @@ ribi::con3::QtGameDialog::QtGameDialog(
   //QObject::connect(ui->button_quit,SIGNAL(clicked(bool)),this,SLOT(close()));
 
   QObject::connect(ui->button_quit,SIGNAL(clicked()),this,SLOT(close()));
-  m_board->m_signal_valid_move.connect(boost::bind(&ribi::con3::QtGameDialog::OnValidMove,this));
+  m_board->m_signal_valid_move.connect(std::bind(&ribi::con3::QtGameDialog::OnValidMove,this));
 
   //Put the dialog in the screen center
   const QRect screen = QApplication::desktop()->screenGeometry();
