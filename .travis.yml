@@ -44,8 +44,8 @@ script:
   - make debug --silent
   - ./ConnectThreeDesktopTest
   # Codecov
-  - ./get_code_cov
-  - codecov
+  - ./get_code_cov >/dev/null
+  - codecov >/dev/null
   # Check dead links
   - rm .travis.yml
   - ./scripts/check_dead_links || true
