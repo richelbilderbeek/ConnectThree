@@ -311,21 +311,6 @@ std::vector<ribi::con3::Move>
   const std::vector<Move> w(GetTwoVerticalOtherMoves());
   std::copy(w.begin(),w.end(),std::back_inserter(v));
   return v;
-  /*
-  std::vector<Move> m;
-  const int n_cols = GetCols();
-  const int n_rows = GetRows();
-  for (int x=0; x!=n_cols; ++x)
-  {
-    for (int y=0; y!=n_rows; ++y)
-    {
-      if (CanDoMove(x,y)) {
-        m.push_back(Move(x,y))
-      }
-    }
-  }
-  return m;
-  */
 }
 
 std::vector<ribi::con3::Move> ribi::con3::Game::GetTwoHorizontalOtherMoves() const noexcept
