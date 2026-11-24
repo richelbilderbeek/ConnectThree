@@ -36,3 +36,6 @@ ui_*
 moc_*
 *_plugin_import.cpp
 *.autosave
+
+# Generated when building the website
+site/
