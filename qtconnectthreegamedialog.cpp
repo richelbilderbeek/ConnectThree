@@ -4,6 +4,7 @@
 
 #include "qtconnectthreegamedialog.h"
 
+#include <QScreen>
 #include <QDesktopWidget>
 #include <QTimer>
 
@@ -50,7 +51,7 @@ ribi::con3::QtGameDialog::QtGameDialog(
   m_board->m_signal_valid_move.connect(std::bind(&ribi::con3::QtGameDialog::OnValidMove,this));
 
   //Put the dialog in the screen center
-  const QRect screen = QApplication::desktop()->screenGeometry();
+  const QRect screen = QGuiApplication::primaryScreen()->geometry();
   this->move( screen.center() - this->rect().center() );
 
   ui->button_quit->setText(resources.GetQuitText().c_str());

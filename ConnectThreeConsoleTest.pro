@@ -19,7 +19,8 @@ SOURCES += main_test.cpp
 CONFIG += c++17
 QMAKE_CXXFLAGS += -std=c++17
 
-QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
+# Qt goes bad with -Weffc++
+QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Werror
 
 # Debug and release mode
 CONFIG += console debug_and_release
