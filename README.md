@@ -1,9 +1,6 @@
 # ConnectThree
 
-Branch|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Codecov logo](Codecov.png)](https://www.codecov.io)
----|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/ConnectThree.svg?branch=master)](https://travis-ci.org/richelbilderbeek/ConnectThree)|[![codecov.io](https://codecov.io/github/richelbilderbeek/ConnectThree/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/ConnectThree/branch/master)
-develop|[![Build Status](https://travis-ci.org/richelbilderbeek/ConnectThree.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/ConnectThree)|[![codecov.io](https://codecov.io/github/richelbilderbeek/ConnectThree/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/ConnectThree/branch/develop)
+[![codecov](https://codecov.io/gh/richelbilderbeek/ConnectThree/branch/main/graph/badge.svg)](https://codecov.io/gh/richelbilderbeek/ConnectThree)
 
 C++ game of 'Connect Three' that uses Qt and Wt.
 

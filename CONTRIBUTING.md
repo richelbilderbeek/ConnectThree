@@ -32,7 +32,7 @@ Pull Requests should follow the same guidelines as 'Submitting code'.
 
 ## Branching policy
 
-* The `master` branch should always build successfully
+* The `main` branch should always build successfully
 * The `development` branch is for developers
 
 ## git usage
