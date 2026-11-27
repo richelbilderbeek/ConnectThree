@@ -3,6 +3,7 @@ Codecov
 ConnectThree
 Richel
 Richèl
+Zensical
 codecov
 http
 io
