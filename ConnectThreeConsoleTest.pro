@@ -1,10 +1,10 @@
 #include(../RibiLibraries/ConsoleApplicationNoWeffcpp.pri)
 #include(../RibiLibraries/Boost.pri)
 
-include(../RibiClasses/CppAbout/CppAbout.pri)
-include(../RibiClasses/CppFileIo/CppFileIo.pri)
-include(../RibiClasses/CppHelp/CppHelp.pri)
-include(../RibiClasses/CppMenuDialog/CppMenuDialog.pri)
+include($$PWD/ribi_classes/CppAbout/CppAbout.pri)
+include($$PWD/ribi_classes/CppFileIo/CppFileIo.pri)
+include($$PWD/ribi_classes/CppHelp/CppHelp.pri)
+include($$PWD/ribi_classes/CppMenuDialog/CppMenuDialog.pri)
 
 #Specific, console
 include(ConnectThree.pri)

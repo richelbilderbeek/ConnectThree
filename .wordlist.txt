@@ -1,6 +1,7 @@
 Bilderbeek's
 Codecov
 ConnectThree
+RibiClasses
 Richel
 Richèl
 Zensical
