@@ -1,14 +1,12 @@
-include(../RibiLibraries/BoostAll.pri)
-include(../RibiLibraries/Wt.pri)
-include(../RibiLibraries/WebApplication.pri)
+include($$PWD/ribi_libraries/BoostAll.pri)
+include($$PWD/ribi_libraries/Wt.pri)
+include($$PWD/ribi_libraries/WebApplication.pri)
 
-# Was: include(../RibiLibraries/GeneralConsole.pri)
 include($$PWD/ribi_classes/CppAbout/CppAbout.pri)
 include($$PWD/ribi_classes/CppFileIo/CppFileIo.pri)
 include($$PWD/ribi_classes/CppHelp/CppHelp.pri)
 include($$PWD/ribi_classes/CppMenuDialog/CppMenuDialog.pri)
 include($$PWD/ribi_classes/CppTrace/CppTrace.pri)
-# Was: include(../RibiLibraries/GeneralWeb.pri)
 DEFINES += BOOST_SIGNALS_NO_DEPRECATION_WARNING
 include($$PWD/ribi_classes/CppWtAboutDialog/CppWtAboutDialog.pri)
 include($$PWD/ribi_classes/CppWtAutoConfig/CppWtAutoConfig.pri)
@@ -17,7 +15,7 @@ include($$PWD/ribi_classes/CppWtAutoConfig/CppWtAutoConfig.pri)
 include($$PWD/ribi_classes/CppCanvas/CppCanvas.pri)
 include(ConnectThree.pri)
 include(ConnectThreeWidget.pri)
-include(../DotMatrix/DotMatrix.pri)
+include($$PWD/dot_matrix/DotMatrix.pri)
 include($$PWD/ribi_classes/CppTextCanvas/CppTextCanvas.pri)
 
 #Specific

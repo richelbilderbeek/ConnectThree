@@ -1,5 +1,5 @@
-#include(../RibiLibraries/ConsoleApplicationNoWeffcpp.pri)
-#include(../RibiLibraries/Boost.pri)
+#include($$PWD/ribi_libraries/ConsoleApplicationNoWeffcpp.pri)
+#include($$PWD/ribi_libraries/Boost.pri)
 
 include($$PWD/ribi_classes/CppAbout/CppAbout.pri)
 include($$PWD/ribi_classes/CppFileIo/CppFileIo.pri)

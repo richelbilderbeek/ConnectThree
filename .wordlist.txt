@@ -1,7 +1,9 @@
 Bilderbeek's
 Codecov
 ConnectThree
+DotMatrix
 RibiClasses
+RibiLibraries
 Richel
 Richèl
 Zensical

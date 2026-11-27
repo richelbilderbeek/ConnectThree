@@ -12,13 +12,11 @@ CONFIG(release, debug|release) {
   DEFINES += NDEBUG
 }
 
-# Was: include(../RibiLibraries/GeneralConsole.pri)
 include($$PWD/ribi_classes/CppAbout/CppAbout.pri)
 include($$PWD/ribi_classes/CppFileIo/CppFileIo.pri)
 include($$PWD/ribi_classes/CppHelp/CppHelp.pri)
 include($$PWD/ribi_classes/CppMenuDialog/CppMenuDialog.pri)
 include($$PWD/ribi_classes/CppTrace/CppTrace.pri)
-# Was: include(../RibiLibraries/GeneralDesktop.pri)
 include($$PWD/ribi_classes/CppQtAboutDialog/CppQtAboutDialog.pri)
 include($$PWD/ribi_classes/CppQtHideAndShowDialog/CppQtHideAndShowDialog.pri)
 

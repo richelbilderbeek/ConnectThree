@@ -2,7 +2,7 @@
 include(ConnectThreeDesktop.pri)
 include(ConnectThreeDesktopTest.pri)
 
-include(../RibiLibraries/BoostAll.pri)
+include($$PWD/ribi_libraries/BoostAll.pri)
 
 include($$PWD/ribi_classes/CppAbout/CppAbout.pri)
 include($$PWD/ribi_classes/CppFileIo/CppFileIo.pri)
@@ -12,7 +12,7 @@ include($$PWD/ribi_classes/CppQtAboutDialog/CppQtAboutDialog.pri)
 include($$PWD/ribi_classes/CppQtHideAndShowDialog/CppQtHideAndShowDialog.pri)
 
 # Specific, console
-include(../DotMatrix/DotMatrix.pri)
+include($$PWD/dot_matrix/DotMatrix.pri)
 include(../ConnectThree/CppConnectThree.pri)
 include(../ConnectThree/CppConnectThreeWidget.pri)
 include($$PWD/ribi_classes/CppTribool/CppTribool.pri)
