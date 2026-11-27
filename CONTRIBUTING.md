@@ -15,7 +15,7 @@ Submitted code should follow these quality guidelines:
 * Code coverage must be 100%
 * Coding style should follow the default style by `OCLint`
 
-These are all checked by Travis CI when submitting
+These are all checked by GitHub Actions when submitting
 a Pull Request.
 
 Emails with code will not be accepted.
